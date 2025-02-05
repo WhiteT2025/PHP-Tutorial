@@ -1,0 +1,349 @@
+Tennie White
+2/3/2025
+
+CS330: Programming Language Project (PLP) Assignment 2: Data types and naming conventions
+Understanding how different types of data are represented in PHP programming language is a key step in being able to use it for bigger projects. 
+Research the naming conventions in your language for variables (i.e., do they have to start with lowercase letters? Can they start with numbers?
+Symbols? do programmers use underscores, as in "last_name", or do they use camel case (lastName))? Write a piece of code that creates variable of each
+of these common data types (where possible) and follows the naming conventions:
+•	int
+•	string
+•	floating-point number
+•	boolean
+•	array/list
+•	dictionary (sometimes called a hash or a map, depending on your language)
+
+Note that not all languages will have all of these built-in types, and some might have other primitive types (for example, most C-family languages have pointers). 
+If your language has other primitive types or doesn’t include some of the above types, modify your code as necessary.
+ 
+
+
+Discussion questions:
+
+1.	What are the naming requirements for variables in PHP language?
+a.	What about naming conventions? Are they enforced by the compiler/interpreter, or are they just standards in the community?
+2.	Is PHP language statically or dynamically typed?
+3.	Strongly typed or weakly typed?
+4.	If you put this line (or something similar) in a program and try to print x, what does it do? If it doesn't compile, why? Is there something you can do to make it compile?
+x = "5" + 6
+
+5.	Describe the limitations (or lack thereof) of PHP programming language as they relate to the coding portion of the assignment (adding ints and floats, 
+storing different types in lists, converting between data types). Are there other restrictions or pitfalls that the documentation mentions that you need to be aware of?
+6.	Are there built-in complex data types that are commonly used in PHP language? (hint: they’d probably appear fairly early in the documentation if so)
+
+Make sure that your answers are clear, accurate, and fully-formed: remember that these
+
+
+
+<?php
+// PHP script demonstrating variable naming conventions and common data types
+
+// Variable Naming Conventions in PHP:
+//   Must start with a `$` sign followed by a letter or underscore
+//   Cannot start with a number or symbol
+//   Case-sensitive
+//   Common conventions: snake_case ($last_name) and camelCase ($lastName)
+
+// Declaring Different Data Types 
+
+// Integer
+$integerVar = 42; 
+
+// String
+$stringVar = "Hello, PHP!";
+
+// Floating-point number (double/float)
+$floatVar = 3.14; 
+
+// Boolean
+$boolVar = true; // Boolean values are either true or false
+
+// Array (List equivalent in other languages)
+$arrayVar = [1, 2, 3, "PHP", 5.5, true]; // PHP allows mixed data types in arrays
+
+// Associative array (Dictionary/HashMap equivalent)
+$dictVar = [
+    "name" => "John Doe",
+    "age" => 30,
+    "isDeveloper" => true
+];
+
+// Exploring Data Type Behaviors 
+
+// Adding an integer and a float (widening conversion occurs)
+$sum = $integerVar + $floatVar; // Result will be a float (45.14)
+echo "Sum of Integer and Float: $sum\n";
+
+// Attempting to concatenate an integer and string
+$stringConcat = $stringVar . " " . $integerVar; // Using '.' for string concatenation
+echo "String Concatenation: $stringConcat\n";
+
+// Checking automatic type conversion in arithmetic
+$implicitConversion = "5" + 6; // PHP converts "5" (string) to integer, result = 11
+echo "Implicit Type Conversion ('5' + 6): $implicitConversion\n";
+
+// Manually converting data types
+$floatToInt = (int)$floatVar; // Converts float to int (drops decimal part)
+$intToString = strval($integerVar); // Converts int to string
+echo "Float to Integer: $floatToInt\n";
+echo "Integer to String: $intToString\n";
+
+// Working with Arrays 
+
+// Printing array contents
+echo "Array Elements:\n";
+print_r($arrayVar);
+
+// Printing associative array (dictionary)
+echo "Dictionary Elements:\n";
+print_r($dictVar);
+
+// Checking if a variable is empty
+echo "Is the array empty? " . (empty($arrayVar) ? "Yes" : "No") . "\n";
+
+// Getting the size of the array
+echo "Size of array: " . count($arrayVar) . "\n";
+
+// Modifying array elements
+$arrayVar[0] = 100; // Changing the first element
+echo "Modified Array:\n";
+print_r($arrayVar);
+
+?>
+
+/*
+  Summary 
+ PHP allows variables to start with a `$` followed by a letter or `_`, but not a number or special character.
+ Naming conventions like camelCase ($myVariable) and snake_case ($my_variable) are common.
+ PHP is dynamically typed (variables do not require explicit type declarations).
+ PHP is weakly typed (automatic type conversions occur).
+ Adding a string and an integer (e.g., "5" + 6) automatically converts the string to an integer.
+ PHP allows mixed data types within arrays (lists), unlike strictly-typed languages.
+ PHP provides built-in functions for explicit type conversion, like (int), (float), and strval().
+ Associative arrays (hash maps) are natively supported and function like dictionaries in other languages.
+ Be cautious with implicit type conversion in arithmetic operations to avoid unexpected results.
+ 
+ 
+
+ 
+
+Output:[Running] php "c:\Users\troub\Downloads\Annotated Bib project\CS330 Programming Language\PHP Naming.php"
+PHP:  syntax error, unexpected '=' in C:\PHP8\php.ini on line 1520
+PHP Warning:  Module "mysqli" is already loaded in Unknown on line 0
+PHP Warning:  Module "mysqli" is already loaded in Unknown on line 0
+
+Warning: Module "mysqli" is already loaded in Unknown on line 0
+
+Warning: Module "mysqli" is already loaded in Unknown on line 0
+Sum of Integer and Float: 45.14
+String Concatenation: Hello, PHP! 42
+Implicit Type Conversion ('5' + 6): 11
+Float to Integer: 3
+Integer to String: 42
+Array Elements:
+Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => PHP
+    [4] => 5.5
+    [5] => 1
+)
+Dictionary Elements:
+Array
+(
+    [name] => John Doe
+    [age] => 30
+    [isDeveloper] => 1
+)
+Is the array empty? No
+Size of array: 6
+Modified Array:
+Array
+(
+    [0] => 100
+    [1] => 2
+    [2] => 3
+    [3] => PHP
+    [4] => 5.5
+    [5] => 1
+)
+
+/*
+  Summary 
+ PHP allows variables to start with a `$` followed by a letter or `_`, but not a number or special character.
+ Naming conventions like camelCase ($myVariable) and snake_case ($my_variable) are common.
+ PHP is dynamically typed (variables do not require explicit type declarations).
+ PHP is weakly typed (automatic type conversions occur).
+ Adding a string and an integer (e.g., "5" + 6) automatically converts the string to an integer.
+ PHP allows mixed data types within arrays (lists), unlike strictly-typed languages.
+ PHP provides built-in functions for explicit type conversion, like (int), (float), and strval().
+ Associative arrays (hash maps) are natively supported and function like dictionaries in other languages.
+ Be cautious with implicit type conversion in arithmetic operations to avoid unexpected results.
+ 
+ 
+
+1. What are the naming requirements for variables in PHP?
+From my experience working with PHP, I’ve learned that variable names must start with a $ symbol, followed by a letter (A-Z or a-z) or an underscore (_). 
+After the first character, they can contain numbers (0-9), but they cannot start with a number or contain special characters like @, !, or -.
+For example, these variable names are valid:
+php
+
+$firstName = "John"; 
+$_myVar = 42; 
+$age2 = 30; 
+However, these are not valid:
+php
+
+$2name = "Invalid";   // Cannot start with a number
+$name! = "Invalid";   // Special character not allowed
+a. What about naming conventions? Are they enforced by the compiler/interpreter, or are they just standards in the community?
+PHP does not enforce strict naming conventions, but the community has best practices. Typically, programmers use:
+•	camelCase ($firstName, $userProfileData) for variables and function names.
+•	snake_case ($user_name, $total_amount) in some older or procedural-style PHP code.
+•	PascalCase (ClassName, MyController) for class names.
+These conventions aren't enforced by PHP itself, but they improve readability and maintainability. Many PHP style guides, like PSR-1 and PSR-12, recommend following these conventions.
+ 
+
+2. Is PHP statically or dynamically typed?
+PHP is a dynamically typed language, which means I don’t have to explicitly declare variable types when assigning values. A variable’s type is determined at runtime and can change dynamically.
+For example:
+php
+
+$var = 10;  // Integer
+$var = "Hello";  // Now it's a string
+$var = 3.14;  // Now it's a float
+This makes PHP very flexible, but it can also lead to unexpected type changes if not handled carefully.
+ 
+
+3. Is PHP strongly typed or weakly typed?
+PHP is weakly typed, which means it automatically converts values between different data types when necessary. This feature is called type juggling.
+For example:
+php
+
+$result = "5" + 6; 
+echo $result;  // Output: 11 (PHP converts "5" into an integer)
+Even though "5" is a string, PHP automatically converts it to an integer for arithmetic operations. While this is convenient, it can also lead to bugs if I expect strict type enforcement.
+However, in PHP 7 and 8, strict typing can be enabled using:
+php
+
+declare(strict_types=1);
+This forces PHP to enforce type declarations, making it behave more like a strongly typed language.
+ 
+
+4. What happens if I run this line?
+php
+
+x = "5" + 6;
+If I try to run this as-is, I’ll get a syntax error because PHP requires variables to start with $.
+✔ Corrected version:
+php
+
+$x = "5" + 6; 
+echo $x;  // Output: 11
+PHP automatically converts "5" (string) into an integer and performs addition instead of string concatenation.
+If I wanted string concatenation instead of addition, I would need to use . instead of +:
+php
+
+$x = "5" . 6;  
+echo $x;  // Output: "56"
+ 
+
+5. What are the limitations of PHP regarding type conversion, lists, and arithmetic?
+One of PHP’s strengths is its flexibility in handling data types, but that can also lead to unexpected behavior. Here’s what I found:
+ Adding integers and floats works fine:
+php
+
+$sum = 10 + 2.5; 
+echo $sum;  // Output: 12.5 (Result is a float)
+PHP automatically widens an integer to a float when necessary.
+Arrays can hold mixed types, unlike some strongly typed languages:
+php
+
+$mixedArray = [1, "two", 3.5, true];  
+print_r($mixedArray);
+
+Potential pitfalls:
+•	Implicit conversions can be risky:
+php
+
+$result = "10 apples" + 5;  
+echo $result;  // Output: 15 (PHP ignores "apples")
+o	PHP tries to convert "10 apples" to an integer (10), then adds 5.
+o	If "apples" were at the beginning of the string, PHP would convert it to 0 instead!
+•	Comparisons can be misleading:
+php
+
+var_dump(0 == "");  // Output: true (PHP treats empty string as 0)
+ 
+
+6. Are there built-in complex data types in PHP?
+Yes! PHP includes several built-in complex data types:
+    Associative Arrays (Dictionaries/Hash Maps)
+PHP’s associative arrays function like dictionaries in Python or hash maps in Java:
+php
+
+$user = [
+    "name" => "Alice",
+    "age" => 25,
+    "isAdmin" => true
+];
+echo $user["name"];  // Output: Alice
+2️⃣ Objects
+PHP is object-oriented, meaning we can define classes and objects:
+php
+
+class Car {
+    public $brand;
+    
+    function setBrand($brand) {
+        $this->brand = $brand;
+    }
+}
+
+$myCar = new Car();
+$myCar->setBrand("Toyota");
+echo $myCar->brand;  // Output: Toyota
+3️⃣ JSON Handling
+PHP has built-in functions for working with JSON, making it useful for APIs:
+php
+
+$jsonData = json_encode($user);
+echo $jsonData;  // Output: {"name":"Alice","age":25,"isAdmin":true}
+4️⃣ PDO (PHP Data Objects) for Database Access
+pdo_mysql allows secure database interactions with MySQL:
+php
+
+$conn = new PDO("mysql:host=localhost;dbname=testdb", "root", "");
+PHP’s support for complex data types makes it powerful for web development and database-driven applications.
+ 
+
+
+Final Thoughts
+I’ve found that PHP’s dynamically typed, weakly typed nature offers a lot of flexibility, but it also requires careful handling of type conversions. 
+Its built-in support for associative arrays, objects, and JSON makes it highly useful for modern web applications. However, to avoid pitfalls, strict
+type declarations (declare(strict_types=1)) can be helpful in PHP 7 and 8.
+
+
+References
+
+PHP Group. (n.d.). PHP: Variables. Retrieved February 1, 2025, from
+    https://www.php.net/manual/en/language.variables.basics.php
+
+PHP Group. (n.d.). PHP: Type juggling. Retrieved February 1, 2025, from
+    https://www.php.net/manual/en/language.types.type-juggling.php
+
+PHP Group. (n.d.). PHP: Data types. Retrieved February 1, 2025, from
+    https://www.php.net/manual/en/language.types.php
+
+PHP Group. (n.d.). PHP: Operators. Retrieved February 1, 2025, from
+    https://www.php.net/manual/en/language.operators.php
+
+PHP Group. (n.d.). PHP: Type conversions. Retrieved February 1, 2025, from
+    https://www.php.net/manual/en/language.types.type-juggling.php
+
+PHP Group. (n.d.). PHP: PDO - PHP Data Objects. Retrieved February 1, 2025, from
+    https://www.php.net/manual/en/book.pdo.php
+
+
