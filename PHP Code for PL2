@@ -1,0 +1,66 @@
+<?php
+// PHP Data Types and Naming Conventions Demonstration
+
+// Integer
+$age = 25;
+
+// String
+$name = "John Doe";
+
+// Floating-point number
+$price = 99.99;
+
+// Boolean
+$is_active = true;
+
+// Array (indexed)
+$colors = ["Red", "Green", "Blue"];
+
+// Associative array (Dictionary/Map)
+$user = [
+    "first_name" => "Jane",
+    "last_name" => "Smith",
+    "age" => 30
+];
+
+// Type Conversions
+$sum = $age + $price; // Integer + Float = Float (Widening conversion)
+$int_to_string = (string) $age; // Convert int to string
+$string_to_int = (int) "123"; // Convert string to int
+
+// Storing different data types in an array
+$mixed_array = ["text", 42, 3.14, true];
+
+// Concatenation vs Addition
+$x = "5" + 6; // PHP converts "5" to an integer, result: 11
+
+// Display Outputs
+echo "Sum (int + float): $sum\n";
+echo "Integer to String: $int_to_string\n";
+echo "String to Integer: $string_to_int\n";
+echo "Mixed Array: ";
+print_r($mixed_array);
+echo "x Value (string + int): $x\n";
+
+// Demonstrating Naming Conventions
+$validName = "Valid"; // Correct
+$_underscoreName = "Valid"; // Correct
+
+// Class Example for Complex Data Types
+class Person {
+    public $name;
+    public $age;
+    
+    public function __construct($name, $age) {
+        $this->name = $name;
+        $this->age = $age;
+    }
+}
+
+$person = new Person("Alice", 25);
+
+// Output results
+echo "Person Object:\n";
+print_r($person);
+
+?>
