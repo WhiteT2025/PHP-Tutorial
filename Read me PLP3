@@ -1,0 +1,55 @@
+README.md
+PLP 3: Conditional Statements and Logical Operators in PHP
+Overview
+This repository contains both a textual explanation and executable PHP code demonstrating the use of conditional statements and logical operators in PHP. These examples illustrate how PHP handles decision-making through if/else, if/elseif/else, switch-case, short-circuit evaluation, and the dangling else problem.
+________________________________________
+Contents
+1. Explanation Document
+•	The file PLP3_Conditional_Logic_PHP.txt contains a detailed narrative explaining: 
+o	Boolean values in PHP
+o	Types of conditional statements (if/else, if/elseif/else, switch-case)
+o	Short-circuit evaluation
+o	Handling of the dangling else problem
+o	Behavior of switch-case, including break and continue
+2. PHP Code File
+•	The file plp3_conditionals.php includes PHP examples with well-commented code that: 
+o	Demonstrates different conditional statements
+o	Provides an example of short-circuit logic
+o	Shows how PHP resolves the dangling else issue
+o	Explores switch-case behavior
+
+How to Run the PHP Code
+Prerequisites
+•	Ensure you have PHP installed on your system. You can check by running: 
+•	php -v
+•	If PHP is not installed, download it from the official PHP website.
+Executing the PHP Script
+1.	Navigate to the project directory where plp3_conditionals.php is saved.
+2.	Run the script using the command: 
+3.	php plp3_conditionals.php
+4.	The expected output should match the comments provided in the script.
+
+Expected Output
+When executed, the PHP script should output the following:
+x is true
+You got a B!
+Start of the workweek.
+Logging in...
+User is logged in.
+Else belongs to which if?
+Else correctly paired!
+Good job!
+One
+Two
+
+References
+PHP Group. (n.d.). PHP: Hypertext Preprocessor – Official Documentation. Retrieved from  
+       https://www.php.net/manual/en/
+ W3Schools. (n.d.). PHP Tutorial. Retrieved from https://www.w3schools.com/php/
+ GeeksforGeeks. (n.d.). PHP Programming Language. Retrieved from
+       https://www.geeksforgeeks.org/php-tutorials/
+   Mozilla Developer Network (MDN). (n.d.). PHP Basics. Retrieved from
+        https://developer.mozilla.org/en-US/docs/Web/PHP
+   TutorialsPoint. (n.d.). PHP Tutorial for Beginners. Retrieved from
+          https://www.tutorialspoint.com/php/index.htm
+
